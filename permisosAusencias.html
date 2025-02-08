@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Permisos y Ausencias</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar ul li:hover {
+            background: #34495e;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .form-container select, .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calendar {
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .requests {
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="dashboard.html">Inicio</a></li>
+            <li><a href="registro.html">Registro de entrada/salida</a></li>
+            <li><a href="permisosAusencias.html">Permisos y ausencias</a></li>
+            <li><a href="nomina.html">Nómina</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h2>Gestión de Permisos y Ausencias</h2>
+        </div>
+        <div class="form-container">
+            <h3>Solicitar Permiso</h3>
+            <form>
+                <select>
+                    <option value="vacaciones">Vacaciones</option>
+                    <option value="licencia_medica">Licencia Médica</option>
+                    <option value="personal">Permiso Personal</option>
+                </select>
+                <input type="date" placeholder="Fecha de inicio">
+                <input type="date" placeholder="Fecha de fin">
+                <textarea placeholder="Justificación"></textarea>
+                <button type="submit">Enviar solicitud</button>
+            </form>
+        </div>
+        <div class="calendar">
+            <h3>Calendario de Permisos</h3>
+            <p>Días disponibles: <span style="color:green;">●</span></p>
+            <p>Días solicitados: <span style="color:yellow;">●</span></p>
+            <p>Días aprobados: <span style="color:blue;">●</span></p>
+        </div>
+        <div class="requests">
+            <h3>Solicitudes de Permiso</h3>
+            <table>
+                <tr>
+                    <th>Fecha de solicitud</th>
+                    <th>Tipo de permiso</th>
+                    <th>Estado</th>
+                </tr>
+                <tr>
+                    <td>01/02/2025</td>
+                    <td>Vacaciones</td>
+                    <td style="color:blue;">Aprobado</td>
+                </tr>
+                <tr>
+                    <td>15/01/2025</td>
+                    <td>Licencia Médica</td>
+                    <td style="color:red;">Rechazado</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

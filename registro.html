@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Entrada/Salida</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar ul li:hover {
+            background: #34495e;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .clock {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .status {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+        }
+        .button.entry {
+            background: green;
+        }
+        .button.exit {
+            background: red;
+        }
+        .history {
+            margin-top: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menú</h2>
+        <ul>
+            <li><a href="dashboard.html">Inicio</a></li>
+            <li><a href="registro.html">Registro de entrada/salida</a></li>
+            <li><a href="permisosAusencias.html">Permisos y ausencias</a></li>
+            <li><a href="nomina.html">Nómina</a></li>
+            <li><a href="reportes.html">Reportes</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h2>Registro de Entrada/Salida</h2>
+        </div>
+        <div class="clock">12:00:00</div>
+        <div class="status">Fuera del trabajo</div>
+        <button class="button entry">Marcar entrada</button>
+        <div class="history">
+            <h3>Historial de entradas y salidas</h3>
+            <table>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora de entrada</th>
+                    <th>Hora de salida</th>
+                    <th>Total horas trabajadas</th>
+                </tr>
+                <tr>
+                    <td>04/02/2025</td>
+                    <td>08:00 AM</td>
+                    <td>05:00 PM</td>
+                    <td>9 horas</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

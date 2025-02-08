@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Entrada/Salida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .button {
+            font-size: 18px;
+            padding: 15px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+            width: 200px;
+        }
+        .entrada { background-color: green; }
+        .salida { background-color: red; }
+        #status {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registro de Entrada/Salida</h2>
+    <h3 id="clock"></h3>
+
+    <button class="button entrada" onclick="registrar('entrada')">Marcar Entrada</button>
+    <button class="button salida" onclick="registrar('salida')">Marcar Salida</button>
+
+    <h3 id="status">Estado: -</h3>
+
+    <script>
+        function updateClock() {
+            let now = new Date();
+            document.getElementById('clock').innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function registrar(tipo) {
+            let usuarioID = "12345"; // Simulación de usuario
+            fetch('registro.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ usuarioID, tipo })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = "Estado: " + data.message;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+</body>
+</html>
